@@ -11,9 +11,9 @@ eCommerce de comsética. La estructura del proyecto consta de las siguientes car
   - 'utils.py': Archivo que proporciona utilidades comunes, como expresiones regulares, configuración de carpetas y clases para manipulación de datos.
   - '__init__.py': Archivo de inicialización de Python.
 
-- **data:** Contiene conjuntos de datos utilizados en el análisis.
-  - '2019-Oct.csv': Datos correspondientes a octubre de 2019.
-  - '2020-Jan.csv': Datos correspondientes a enero de 2020.
+- **data:** VACIO
+  - El conjunto de datos es demasiado grande para subir a un repositorio GitHub. Si quieres acceder a los datos puedes descargarlos
+    en: https://www.kaggle.com/datasets/mkechinov/ecommerce-events-history-in-cosmetics-shop/data
 
 - **src:** Contiene archivos Python que implementan el código de análisis utilizando PySpark.
   - Archivos '.py': Implementan operaciones de extracción, transformación y carga utilizando Spark.
