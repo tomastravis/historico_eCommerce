@@ -1,9 +1,10 @@
-import os
+#importamos módulos para interactuar con el sistema operativo
+import os 
 import sys
 sys.path.insert(0, ".")
 
-import pyspark.sql.functions as F
-from pyspark.sql import SparkSession
+import pyspark.sql.functions as F #importamos funciones para realizar operaciones en las columnas de los dataframes
+from pyspark.sql import SparkSession #Permite crear dataframes y ejecutar operaciones de Spark
 from commons.utils import FolderConfig
 
 if __name__ == "__main__":
@@ -12,12 +13,12 @@ if __name__ == "__main__":
     spark = SparkSession.builder.appName(
         "Analizando la actividad dependiendo del tiempo"
     ).getOrCreate()
-    spark.sparkContext.setLogLevel("WARN")
+    spark.sparkContext.setLogLevel("WARN") #limitamos los mensajes de log (solo adevertencias y errores)
 
     DIRECTORY = str(fc.input)
 
 
-    # 1 - Imortación de datos
+    # 1 - Importación de datos
 
     df_oct = (
         spark.read.csv(
@@ -37,7 +38,7 @@ if __name__ == "__main__":
         )
     )
 
-    # Pasamos la variable de tiempo a tipo 'timestamp'
+    # Pasamos la variable de tiempo a tipo ' timestamp'para análisis temporales
     df_oct = df_oct.withColumn("event_time", F.to_timestamp("event_time"))
     df_jan = df_jan.withColumn("event_time", F.to_timestamp("event_time"))
 
